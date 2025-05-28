@@ -20,7 +20,7 @@ jobs:
 
       - bash: |
           mkdir bw-output
-          bear --output bw-output/compile_commands.json -- gradle clean build
+          bear --output bw-output/compile_commands.json --verbose -- gradle clean build
         workingDirectory: .
         displayName: Build in bear wrapper and generate the compilation database
 
