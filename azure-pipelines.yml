@@ -3,6 +3,9 @@ jobs:
     displayName: Build for Linux\Gradle CFamily With SonarCloud
     pool:
       vmImage: 'ubuntu-latest'
+    variables:
+      SONAR_SCANNER_DOWNLOAD_URL: https://sonarcloud.io/static/cpp/build-wrapper-linux-x86.zip
+
     steps:
       - task: SonarCloudPrepare@3
         inputs:
@@ -15,12 +18,21 @@ jobs:
             sonar.cfamily.compile-commands=bw-output/compile_commands.json
 
       - bash: |
+         mkdir -p $HOME/.sonar
+         curl -sSLo $HOME/.sonar/build-wrapper-linux-x86.zip ${{variables.BUILD_WRAPPER_DOWNLOAD_URL}}
+         unzip -o $HOME/.sonar/build-wrapper-linux-x86.zip -d $HOME/.sonar/
+        displayName: Download and install build wrapper
+
+      - bash: |
          sudo apt install -y bear
         displayName: Install bear, a generator compilation database for CFamily projects
 
       - bash: |
           mkdir bw-output
           gradle --daemon
-          bear --output bw-output/compile_commands.json -- gradle clean build sonar --debug
-        displayName: Build in bear wrapper, generate the compilation database and run SonarCloud analysis
+          bear --output bw-output/compile_commands.json -- gradle clean build
+        displayName: Build in bear wrapper, generate the compilation database and build the project
+
+      - task: SonarCloudAnalyze@3
+        displayName: Run SonarCloud analysis
 
