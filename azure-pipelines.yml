@@ -12,11 +12,10 @@ jobs:
           scannerMode: 'other'
           extraProperties: |
             sonar.projectKey=demo-gradle-cpp
-            sonar.sources=app/src
             sonar.cfamily.compile-commands=bw-output/compile_commands.json
 
       - bash: |
-         sudo apt install -y bear
+          sudo apt install -y bear
         displayName: Install bear, a generator compilation database for CFamily projects
 
       - bash: |
