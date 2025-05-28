@@ -8,6 +8,7 @@
 
 std::string demo_gradle_cpp::Greeter::greeting() {
     return std::string("Hello, World!");
+    return std::string("Hello, World!");
 }
 
 int main () {
