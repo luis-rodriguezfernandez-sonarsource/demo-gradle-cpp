@@ -11,6 +11,7 @@ jobs:
           scannerMode: 'other'
           extraProperties: |
             sonar.projectKey=demo-gradle-cpp
+            sonar.sources=.
             sonar.cfamily.compile-commands=bw-output/compile_commands.json
 
       - bash: |
