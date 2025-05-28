@@ -6,4 +6,3 @@
  */
 
 rootProject.name = 'demo-gradle-cpp'
-include('app')
