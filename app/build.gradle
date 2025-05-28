@@ -11,8 +11,6 @@ plugins {
 
     // Apply the cpp-unit-test plugin to add support for building and running C++ test executables
     id 'cpp-unit-test'
-
-    id "org.sonarqube" version "6.0.1.5171"
 }
 
 // Set the target operating system and architecture for this application

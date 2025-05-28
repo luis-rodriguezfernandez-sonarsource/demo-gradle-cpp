@@ -10,7 +10,7 @@ jobs:
           organization: 'luis-rodriguezfernandez-sonarsource'
           scannerMode: 'other'
           extraProperties: |
-            sonar.projectKeydemo-gradle-cpp
+            sonar.projectKey=demo-gradle-cpp
             sonar.sources=app/src
             sonar.cfamily.compile-commands=bw-output/compile_commands.json
             sonar.verbose=true
@@ -22,9 +22,9 @@ jobs:
       - bash: |
           mkdir bw-output
           gradle --daemon
-          bear --output bw-output/compile_commands.json -- gradle clean build sonar
+          bear --output bw-output/compile_commands.json -- gradle clean build
         workingDirectory: .
         displayName: Build in bear wrapper and generate the compilation database
 
-#      - task: SonarCloudAnalyze@3
-#        displayName: Run SonarCloud analysis
+      - task: SonarCloudAnalyze@3
+        displayName: Run SonarCloud analysis
