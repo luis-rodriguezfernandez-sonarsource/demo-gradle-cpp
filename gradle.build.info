@@ -1,0 +1,158 @@
+Initialized native services in: /home/Luis.RodriguezFernandez/.gradle/native
+Initialized jansi services in: /home/Luis.RodriguezFernandez/.gradle/native
+The client will now receive all logging from the daemon (pid: 74604). The daemon log file: /home/Luis.RodriguezFernandez/.gradle/daemon/8.13/daemon-74604.out.log
+Starting 9th build in daemon [uptime: 18 mins 37.377 secs, performance: 100%, GC rate: 0.00/s, heap usage: 0% of 512 MiB, non-heap usage: 20% of 384 MiB]
+Using 22 worker leases.
+Now considering [/home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp] as hierarchies to watch
+Reusing configuration cache.
+Now considering [/home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp] as hierarchies to watch
+Watching the file system is configured to be enabled if available
+File system watching is active
+Tasks to be executed: [task ':app:clean', task ':app:compileDebugCpp', task ':app:linkDebug', task ':app:installDebug', task ':app:assemble', task ':app:compileTestCpp', task ':app:relocateMainForTest', task ':app:linkTest', task ':app:installTest', task ':app:runTest', task ':app:test', task ':app:check', task ':app:build']
+Tasks that were excluded: []
+Resolve mutations for :app:clean (Thread[Execution worker,5,main]) started.
+:app:clean (Thread[Execution worker Thread 16,5,main]) started.
+destroyer locations for task group 0 (Thread[Execution worker Thread 2,5,main]) started.
+Resolve mutations for :app:compileDebugCpp (Thread[Execution worker Thread 21,5,main]) started.
+Resolve mutations for :app:compileTestCpp (Thread[Execution worker,5,main]) started.
+
+> Task :app:clean
+Caching disabled for task ':app:clean' because:
+  Build cache is disabled
+Task ':app:clean' is not up-to-date because:
+  Task has not declared any outputs despite executing actions.
+:app:compileDebugCpp (Thread[Execution worker Thread 16,5,main]) started.
+:app:compileTestCpp (Thread[Execution worker Thread 21,5,main]) started.
+
+> Task :app:compileTestCpp
+Found all include files for ':app:compileTestCpp'
+Caching disabled for task ':app:compileTestCpp' because:
+  Build cache is disabled
+Task ':app:compileTestCpp' is not up-to-date because:
+  Output property 'objectFileDir' file /home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/obj/test has been removed.
+  Output property 'objectFileDir' file /home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/obj/test/9yxcrtbw8l8n123chso4js8ln has been removed.
+  Output property 'objectFileDir' file /home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/obj/test/9yxcrtbw8l8n123chso4js8ln/app_test.o has been removed.
+The input changes require a full rebuild for incremental task ':app:compileTestCpp'.
+See file:///home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/tmp/compileTestCpp/output.txt for all output for compileTestCpp.
+Starting process 'command '/usr/bin/g++''. Working directory: /home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/obj/test Command: /usr/bin/g++ @/home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/tmp/compileTestCpp/options.txt -m64 /home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/src/test/cpp/app_test.cpp -o /home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/obj/test/9yxcrtbw8l8n123chso4js8ln/app_test.o
+Successfully started process 'command '/usr/bin/g++''
+
+Finished compileTestCpp, see full log file:///home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/tmp/compileTestCpp/output.txt.
+
+> Task :app:compileDebugCpp
+Found all include files for ':app:compileDebugCpp'
+Caching disabled for task ':app:compileDebugCpp' because:
+  Build cache is disabled
+Task ':app:compileDebugCpp' is not up-to-date because:
+  Output property 'objectFileDir' file /home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/obj/main/debug has been removed.
+  Output property 'objectFileDir' file /home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/obj/main/debug/c0rn65lkroj8p4fvz0qgmzzjr has been removed.
+  Output property 'objectFileDir' file /home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/obj/main/debug/c0rn65lkroj8p4fvz0qgmzzjr/app.o has been removed.
+The input changes require a full rebuild for incremental task ':app:compileDebugCpp'.
+See file:///home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/tmp/compileDebugCpp/output.txt for all output for compileDebugCpp.
+Starting process 'command '/usr/bin/g++''. Working directory: /home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/obj/main/debug Command: /usr/bin/g++ @/home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/tmp/compileDebugCpp/options.txt -m64 /home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/src/main/cpp/app.cpp -o /home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/obj/main/debug/c0rn65lkroj8p4fvz0qgmzzjr/app.o
+Successfully started process 'command '/usr/bin/g++''
+
+Finished compileDebugCpp, see full log file:///home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/tmp/compileDebugCpp/output.txt.
+Resolve mutations for :app:linkDebug (Thread[Execution worker Thread 16,5,main]) started.
+Resolve mutations for :app:relocateMainForTest (Thread[Execution worker Thread 21,5,main]) started.
+:app:linkDebug (Thread[Execution worker Thread 21,5,main]) started.
+:app:relocateMainForTest (Thread[Execution worker Thread 18,5,main]) started.
+
+> Task :app:relocateMainForTest
+Caching disabled for task ':app:relocateMainForTest' because:
+  Build cache is disabled
+Task ':app:relocateMainForTest' is not up-to-date because:
+  Output property 'outputDirectory' file /home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/obj/for-test/main/debug has been removed.
+  Output property 'outputDirectory' file /home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/obj/for-test/main/debug/app.o has been removed.
+The input changes require a full rebuild for incremental task ':app:relocateMainForTest'.
+Starting process 'command 'objcopy''. Working directory: /home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app Command: objcopy -L main /home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/obj/main/debug/c0rn65lkroj8p4fvz0qgmzzjr/app.o /home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/obj/for-test/main/debug/app.o
+Successfully started process 'command 'objcopy''
+Resolve mutations for :app:linkTest (Thread[Execution worker Thread 18,5,main]) started.
+:app:linkTest (Thread[Execution worker Thread 18,5,main]) started.
+
+> Task :app:linkDebug
+Caching disabled for task ':app:linkDebug' because:
+  Build cache is disabled
+  Not made cacheable, yet
+Task ':app:linkDebug' is not up-to-date because:
+  Output property 'destinationDirectory' file /home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/exe/main/debug has been removed.
+  Output property 'destinationDirectory' file /home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/exe/main/debug/app has been removed.
+  Output property 'linkedFile' file /home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/exe/main/debug/app has been removed.
+See file:///home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/tmp/linkDebug/output.txt for all output for linkDebug.
+Starting process 'command '/usr/bin/g++''. Working directory: /home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app Command: /usr/bin/g++ @/home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/tmp/linkDebug/options.txt -m64
+Successfully started process 'command '/usr/bin/g++''
+
+Finished linkDebug, see full log file:///home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/tmp/linkDebug/output.txt.
+Resolve mutations for :app:installDebug (Thread[Execution worker Thread 21,5,main]) started.
+:app:installDebug (Thread[Execution worker Thread 21,5,main]) started.
+
+> Task :app:installDebug
+Caching disabled for task ':app:installDebug' because:
+  Build cache is disabled
+  Not worth caching
+Task ':app:installDebug' is not up-to-date because:
+  Output property 'installDirectory' file /home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/install/main/debug has been removed.
+  Output property 'installDirectory' file /home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/install/main/debug/app has been removed.
+  Output property 'installDirectory' file /home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/install/main/debug/lib has been removed.
+  and more...
+Resolve mutations for :app:assemble (Thread[Execution worker Thread 21,5,main]) started.
+:app:assemble (Thread[Execution worker Thread 4,5,main]) started.
+
+> Task :app:assemble
+Skipping task ':app:assemble' as it has no actions.
+
+> Task :app:linkTest
+Caching disabled for task ':app:linkTest' because:
+  Build cache is disabled
+  Not made cacheable, yet
+Task ':app:linkTest' is not up-to-date because:
+  Output property 'destinationDirectory' file /home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/exe/test has been removed.
+  Output property 'destinationDirectory' file /home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/exe/test/appTest has been removed.
+  Output property 'linkedFile' file /home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/exe/test/appTest has been removed.
+See file:///home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/tmp/linkTest/output.txt for all output for linkTest.
+Starting process 'command '/usr/bin/g++''. Working directory: /home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app Command: /usr/bin/g++ @/home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/tmp/linkTest/options.txt -m64
+Successfully started process 'command '/usr/bin/g++''
+
+Finished linkTest, see full log file:///home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/tmp/linkTest/output.txt.
+Resolve mutations for :app:installTest (Thread[Execution worker Thread 18,5,main]) started.
+:app:installTest (Thread[Execution worker Thread 18,5,main]) started.
+
+> Task :app:installTest
+Caching disabled for task ':app:installTest' because:
+  Build cache is disabled
+  Not worth caching
+Task ':app:installTest' is not up-to-date because:
+  Output property 'installDirectory' file /home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/install/test has been removed.
+  Output property 'installDirectory' file /home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/install/test/appTest has been removed.
+  Output property 'installDirectory' file /home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/install/test/lib has been removed.
+  and more...
+Resolve mutations for :app:runTest (Thread[Execution worker Thread 18,5,main]) started.
+:app:runTest (Thread[Execution worker Thread 6,5,main]) started.
+
+> Task :app:runTest
+Caching disabled for task ':app:runTest' because:
+  Build cache is disabled
+  Not made cacheable, yet
+Task ':app:runTest' is not up-to-date because:
+  Output property 'outputDir' file /home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/test-results/test has been removed.
+Starting process 'command '/home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/install/test/appTest''. Working directory: /home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/test-results/test Command: /home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/install/test/appTest 
+Successfully started process 'command '/home/Luis.RodriguezFernandez/playground/development_projects/demo-gradle-cpp/app/build/install/test/appTest''
+Resolve mutations for :app:test (Thread[Execution worker Thread 6,5,main]) started.
+:app:test (Thread[Execution worker Thread 11,5,main]) started.
+
+> Task :app:test
+Skipping task ':app:test' as it has no actions.
+Resolve mutations for :app:check (Thread[Execution worker Thread 4,5,main]) started.
+:app:check (Thread[Execution worker Thread 4,5,main]) started.
+
+> Task :app:check
+Skipping task ':app:check' as it has no actions.
+Resolve mutations for :app:build (Thread[Execution worker Thread 4,5,main]) started.
+:app:build (Thread[Execution worker Thread 4,5,main]) started.
+
+> Task :app:build
+Skipping task ':app:build' as it has no actions.
+
+BUILD SUCCESSFUL in 703ms
+9 actionable tasks: 9 executed
+Configuration cache entry reused.
