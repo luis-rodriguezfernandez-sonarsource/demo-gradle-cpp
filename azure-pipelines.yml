@@ -1,0 +1,27 @@
+jobs:
+  - job: BuildLinuxWithSonarCloud
+    displayName: Build for Linux\CMake With SonarCloud
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+      - task: SonarCloudPrepare@3
+        inputs:
+          SonarCloud: 'sonarcloud.io'
+          organization: 'luis-rodriguezfernandez-sonarsource'
+          scannerMode: 'other'
+          extraProperties: |
+            sonar.projectKeydemo-gradle-cpp
+            sonar.sources=app/src
+            sonar.cfamily.compile-commands=bw-output/compile_commands.json
+
+      - bash: |
+         apt install -y bear
+        displayName: Install bear, a generator compilation database for Clang tooling
+
+      - bash: |
+          mkdir bw-output
+          bear --output bw-output/compile_commands.json -- gradle clean build
+        workingDirectory: .
+        displayName: Build in bear wrapper and generate the compilation database
+
+      - task: SonarCloudAnalyze@1
