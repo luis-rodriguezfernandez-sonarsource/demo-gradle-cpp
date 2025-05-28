@@ -36,6 +36,8 @@ jobs:
         displayName: Build in bear wrapper, generate the compilation database
 
       - bash: |
+          echo $PATH
+          ls -l $HOME/.sonar/sonar-scanner-7.1.0.4889/bin
           sonar-scanner
         displayName: Run sonar-scanner to analyze the project
 
