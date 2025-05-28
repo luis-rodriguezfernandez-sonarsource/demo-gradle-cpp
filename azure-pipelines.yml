@@ -18,14 +18,6 @@ jobs:
             sonar.cfamily.compile-commands=bw-output/compile_commands.json
 
       - bash: |
-         mkdir -p $HOME/.sonar
-         curl -sSLo $HOME/.sonar/sonar-scanner-cli-7.1.0.4889.zip ${{variables.SONAR_SCANNER_DOWNLOAD_URL}}
-         unzip -o $HOME/.sonar/sonar-scanner-cli-7.1.0.4889.zip -d $HOME/.sonar/
-         export PATH=$HOME/.sonar/sonar-scanner-7.1.0.4889/bin:$PATH
-         sonar-scanner --version
-        displayName: Download and install sonar-scanner CLI
-
-      - bash: |
           sudo apt install -y bear
         displayName: Install bear, a generator compilation database for CFamily projects
 
@@ -36,8 +28,10 @@ jobs:
         displayName: Build in bear wrapper, generate the compilation database
 
       - bash: |
-          echo $PATH
-          ls -l $HOME/.sonar/sonar-scanner-7.1.0.4889/bin
+          mkdir -p $HOME/.sonar
+          curl -sSLo $HOME/.sonar/sonar-scanner-cli-7.1.0.4889.zip ${{variables.SONAR_SCANNER_DOWNLOAD_URL}}
+          unzip -o $HOME/.sonar/sonar-scanner-cli-7.1.0.4889.zip -d $HOME/.sonar/
+          export PATH=$HOME/.sonar/sonar-scanner-7.1.0.4889/bin:$PATH
           sonar-scanner
-        displayName: Run sonar-scanner to analyze the project
+        displayName: Download and run sonar-scanner
 
