@@ -3,17 +3,26 @@ jobs:
     displayName: Build for Linux\Gradle CFamily With SonarCloud
     pool:
       vmImage: 'ubuntu-latest'
+    variables:
+      SONAR_SCANNER_DOWNLOAD_URL: https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-7.1.0.4889.zip
 
     steps:
       - task: SonarCloudPrepare@3
         inputs:
           SonarCloud: 'sonarcloud.io'
           organization: 'luis-rodriguezfernandez-sonarsource'
-          scannerMode: 'other'
+          scannerMode: 'cli'
           extraProperties: |
             sonar.projectKey=demo-gradle-cpp
             sonar.sources=src
             sonar.cfamily.compile-commands=bw-output/compile_commands.json
+
+      - bash: |
+         mkdir -p $HOME/.sonar
+         curl -sSLo $HOME/.sonar/sonar-scanner-cli-7.1.0.4889.zip ${{variables.SONAR_SCANNER_DOWNLOAD_URL}}
+         unzip -o $HOME/.sonar/sonar-scanner-cli-7.1.0.4889.zip -d $HOME/.sonar/
+         export PATH=$HOME/.sonar/sonar-scanner-cli-7.1.0.4889:$PATH
+        displayName: Download and install sonar-scanner CLI
 
       - bash: |
           sudo apt install -y bear
@@ -22,6 +31,10 @@ jobs:
       - bash: |
           mkdir bw-output
           gradle --daemon
-          bear --output bw-output/compile_commands.json -- gradle clean build sonar --info
-        displayName: Build in bear wrapper, generate the compilation database, build the project and run SonarCloud analysis
+          bear --output bw-output/compile_commands.json -- gradle clean build
+        displayName: Build in bear wrapper, generate the compilation database
+
+      - bash: |
+          sonar-scanner
+        displayName: Run sonar-scanner to analyze the project
 
