@@ -21,7 +21,8 @@ jobs:
          mkdir -p $HOME/.sonar
          curl -sSLo $HOME/.sonar/sonar-scanner-cli-7.1.0.4889.zip ${{variables.SONAR_SCANNER_DOWNLOAD_URL}}
          unzip -o $HOME/.sonar/sonar-scanner-cli-7.1.0.4889.zip -d $HOME/.sonar/
-         export PATH=$HOME/.sonar/sonar-scanner-cli-7.1.0.4889:$PATH
+         export PATH=$HOME/.sonar/sonar-scanner-cli-7.1.0.4889/bin:$PATH
+         sonar-scanner --version
         displayName: Download and install sonar-scanner CLI
 
       - bash: |
