@@ -22,7 +22,7 @@ jobs:
       - bash: |
           mkdir bw-output
           gradle --daemon
-          ls -alrt 
+          ls -alrt app/src
           bear --output bw-output/compile_commands.json -- gradle clean build sonar
         workingDirectory: .
         displayName: Build in bear wrapper and generate the compilation database
