@@ -1,6 +1,6 @@
 jobs:
-  - job: BuildLinuxWithSonarCloud
-    displayName: Build for Linux\CMake With SonarCloud
+  - job: BuildLinuxWithGradleSonarCloud
+    displayName: Build for Linux\Gradle CFamily With SonarCloud
     pool:
       vmImage: 'ubuntu-latest'
     steps:
@@ -15,8 +15,8 @@ jobs:
             sonar.cfamily.compile-commands=bw-output/compile_commands.json
 
       - bash: |
-         apt install -y bear
-        displayName: Install bear, a generator compilation database for Clang tooling
+         sudo apt install -y bear
+        displayName: Install bear, a generator compilation database for CFamily tooling
 
       - bash: |
           mkdir bw-output
