@@ -10,7 +10,7 @@ jobs:
       - task: SonarCloudPrepare@3
         inputs:
           SonarCloud: 'sonarcloud.io'
-          organization: 'luis-rodriguezfernandez-sonarsource'
+          organization: 'luisrodriguezfernandez'
           scannerMode: 'cli'
           extraProperties: |
             sonar.projectKey=demo-gradle-cpp
